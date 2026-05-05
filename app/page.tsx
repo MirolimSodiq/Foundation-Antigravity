@@ -1,15 +1,17 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import TechSpecs from "@/components/TechSpecs";
-import Configurator from "@/components/Configurator";
+import BydHero from "@/components/BydHero";
+import BydNews from "@/components/BydNews";
+import BydCommunity from "@/components/BydCommunity";
+import BydFooter from "@/components/BydFooter";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black">
+    <main className="min-h-screen bg-white">
       <Header />
-      <Hero />
-      <TechSpecs />
-      <Configurator />
+      <BydHero />
+      <BydNews />
+      <BydCommunity />
+      <BydFooter />
     </main>
   );
 }
