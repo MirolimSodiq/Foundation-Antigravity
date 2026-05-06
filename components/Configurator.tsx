@@ -5,7 +5,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import ThreeDViewer from "./ThreeDViewer";
 import { Check } from "lucide-react";
 
-const CONFIG_OPTIONS = {
+interface ColorOption { id: string; name: string; hex: string; price: number; }
+interface WheelOption { id: string; name: string; style: string; price: number; }
+interface InteriorOption { id: string; name: string; price: number; }
+
+interface ConfigOptions {
+  colors: ColorOption[];
+  wheels: WheelOption[];
+  interior: InteriorOption[];
+}
+
+const CONFIG_OPTIONS: ConfigOptions = {
   colors: [
     { id: "stealth", name: "Stealth Black", hex: "#111111", price: 0 },
     { id: "pearl", name: "Pearl White", hex: "#f0f0f0", price: 1500 },

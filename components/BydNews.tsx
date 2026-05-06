@@ -1,7 +1,13 @@
 "use client";
 
+interface NewsItem {
+  title: string;
+  date: string;
+  img: string;
+}
+
 export default function BydNews() {
-  const news = [
+  const news: NewsItem[] = [
     {
       title: "海洋网新车型上市",
       date: "2024-03-12",
@@ -33,7 +39,7 @@ export default function BydNews() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {news.map((item, i) => (
+          {news.map((item: NewsItem, i: number) => (
             <div key={i} className="group cursor-pointer">
               <div className="overflow-hidden mb-4 relative aspect-[4/3]">
                 <img 

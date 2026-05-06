@@ -3,7 +3,13 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const slides = [
+interface Slide {
+  image: string;
+  title: string;
+  subtitle: string;
+}
+
+const slides: Slide[] = [
   {
     image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=2071&auto=format&fit=crop",
     title: "NextGen EV | 闪充时代 颠覆燃油",
@@ -24,7 +30,7 @@ export default function BydHero() {
 
   return (
     <section className="relative w-full h-[80vh] min-h-[600px] bg-black overflow-hidden group">
-      {slides.map((slide, index) => (
+      {slides.map((slide: Slide, index: number) => (
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ${

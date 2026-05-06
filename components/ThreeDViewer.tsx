@@ -20,7 +20,7 @@ function StylizedCar({ color, wheelStyle }: { color: string, wheelStyle: string 
         {/* Main Body (Sleek aerodynamic shape) */}
         <mesh position={[0, 0.6, 0]} castShadow>
           <capsuleGeometry args={[0.8, 2.5, 4, 16]} />
-          <meshStandardMaterial 
+          <meshPhysicalMaterial 
             color={carColor} 
             metalness={0.8} 
             roughness={0.1}
@@ -45,7 +45,7 @@ function StylizedCar({ color, wheelStyle }: { color: string, wheelStyle: string 
         {[
           [-1, 0.4, 1.2], [1, 0.4, 1.2], 
           [-1, 0.4, -1.2], [1, 0.4, -1.2]
-        ].map((pos, i) => (
+        ].map((pos: number[], i: number) => (
           <group key={i} position={pos as [number, number, number]}>
             <mesh castShadow rotation={[0, 0, Math.PI / 2]}>
               <cylinderGeometry args={[0.4, 0.4, 0.3, 32]} />
